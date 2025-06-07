@@ -1,0 +1,30 @@
+{
+  "lexicon": 1,
+  "id": "com.nnabeyang.soyokaze.notification.defs",
+  "defs": {
+    "notification": {
+      "type": "object",
+      "required": ["reason", "uri", "creator"],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "knownValues": [
+            "like",
+            "repost",
+            "follow",
+            "mention",
+            "reply",
+            "quote",
+            "starterpack-joined",
+            "verified",
+            "unverified"
+          ]
+        },
+        "uri": { "type": "string", "format": "at-uri" },
+        "creator": { "type": "string" },
+        "subjectUri": { "type": "string", "format": "at-uri" },
+        "body": { "type": "string" }
+      }
+    }
+  }
+}
