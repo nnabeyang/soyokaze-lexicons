@@ -17,7 +17,10 @@
             "quote",
             "starterpack-joined",
             "verified",
-            "unverified"
+            "unverified",
+            "like-via-repost",
+            "repost-via-repost",
+            "subscribed-post"
           ]
         },
         "uri": { "type": "string", "format": "at-uri" },
