@@ -1,0 +1,20 @@
+{
+  "lexicon": 1,
+  "id": "com.nnabeyang.soyokaze.notification.authorizeServer",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description": "Start authorizing the notification server to read the requesting account's notifications. Returns the URL to open in a browser.",
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["authorizationUrl"],
+          "properties": {
+            "authorizationUrl": { "type": "string", "format": "uri" }
+          }
+        }
+      }
+    }
+  }
+}
