@@ -1,0 +1,25 @@
+{
+  "lexicon": 1,
+  "id": "com.nnabeyang.soyokaze.notification.getServerAuthorization",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description": "Get whether the notification server holds a usable session for the requesting account.",
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "active: the server holds a session. expired: the session can no longer be refreshed and the account must authorize again. none: the account has not authorized the server.",
+              "maxLength": 32,
+              "knownValues": ["active", "expired", "none"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
