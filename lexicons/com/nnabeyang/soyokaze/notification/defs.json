@@ -25,6 +25,7 @@
         },
         "uri": { "type": "string", "format": "at-uri" },
         "creator": { "type": "string" },
+        "avatar": { "type": "string", "format": "uri" },
         "subjectUri": { "type": "string", "format": "at-uri" },
         "body": { "type": "string" }
       }
