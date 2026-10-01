@@ -1,0 +1,17 @@
+{
+  "lexicon": 1,
+  "id": "com.nnabeyang.soyokaze.notification.revokeServerAuthorization",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description": "Revoke the notification server's session for the requesting account. The server stops reading the account's notifications until the account authorizes it again.",
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    }
+  }
+}
