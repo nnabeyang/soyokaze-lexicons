@@ -4,12 +4,25 @@
   "defs": {
     "main": {
       "type": "procedure",
-      "description": "Start authorizing the notification server to read the requesting account's notifications. Returns the URL to open in a browser.",
+      "description": "Allow the notification server to send push notifications to one of the requesting account's devices. If the server does not yet hold a session for the account, returns the URL to open in a browser to authorize it; the device is allowed once that authorization completes. Otherwise the device is allowed immediately and no URL is returned.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["deviceId"],
+          "properties": {
+            "deviceId": {
+              "type": "string",
+              "description": "The device's identifier for vendor, as sent inside the token of app.bsky.notification.registerPush.",
+              "maxLength": 64
+            }
+          }
+        }
+      },
       "output": {
         "encoding": "application/json",
         "schema": {
           "type": "object",
-          "required": ["authorizationUrl"],
           "properties": {
             "authorizationUrl": { "type": "string", "format": "uri" }
           }

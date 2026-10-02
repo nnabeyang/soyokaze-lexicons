@@ -4,7 +4,18 @@
   "defs": {
     "main": {
       "type": "query",
-      "description": "Get whether the notification server holds a usable session for the requesting account.",
+      "description": "Get whether the notification server sends push notifications to one of the requesting account's devices.",
+      "parameters": {
+        "type": "params",
+        "required": ["deviceId"],
+        "properties": {
+          "deviceId": {
+            "type": "string",
+            "description": "The device's identifier for vendor, as sent inside the token of app.bsky.notification.registerPush.",
+            "maxLength": 64
+          }
+        }
+      },
       "output": {
         "encoding": "application/json",
         "schema": {
@@ -13,7 +24,7 @@
           "properties": {
             "status": {
               "type": "string",
-              "description": "active: the server holds a session. expired: the session can no longer be refreshed and the account must authorize again. none: the account has not authorized the server.",
+              "description": "active: the device is allowed and the server holds a session for the account. expired: the device is allowed but the session can no longer be refreshed, so the account must authorize again. none: the device is not allowed.",
               "maxLength": 32,
               "knownValues": ["active", "expired", "none"]
             }

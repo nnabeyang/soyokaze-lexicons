@@ -4,7 +4,21 @@
   "defs": {
     "main": {
       "type": "procedure",
-      "description": "Revoke the notification server's session for the requesting account. The server stops reading the account's notifications until the account authorizes it again.",
+      "description": "Stop sending push notifications from the notification server to one of the requesting account's devices. When no allowed device remains, the server revokes its session for the account and stops reading the account's notifications.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["deviceId"],
+          "properties": {
+            "deviceId": {
+              "type": "string",
+              "description": "The device's identifier for vendor, as sent inside the token of app.bsky.notification.registerPush.",
+              "maxLength": 64
+            }
+          }
+        }
+      },
       "output": {
         "encoding": "application/json",
         "schema": {
