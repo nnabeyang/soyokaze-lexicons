@@ -27,6 +27,10 @@
               "description": "active: the device is allowed and the server holds a session for the account. expired: the device is allowed but the session can no longer be refreshed, so the account must authorize again. none: the device is not allowed.",
               "maxLength": 32,
               "knownValues": ["active", "expired", "none"]
+            },
+            "accountAuthorized": {
+              "type": "boolean",
+              "description": "Whether the server holds a usable session for the account, for example because another device is allowed. When true, allowing this device needs no authorization in a browser."
             }
           }
         }
